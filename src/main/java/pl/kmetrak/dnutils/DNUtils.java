@@ -1,4 +1,4 @@
-package pl.gov.coi.cepik.core.autoryzacja;
+package pl.kmetrak.dnutils;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
