@@ -62,7 +62,7 @@ public class DNUtils {
     public static String [] getFields(String dn, String fieldName){
         List<String> list = new LinkedList<>();
         for(String s:splitDN(dn)){
-            if(fieldName.toUpperCase().equals(s.substring(0, s.indexOf("=")).toUpperCase())){
+            if(fieldName.equalsIgnoreCase(s.substring(0, s.indexOf("=")))){
                 list.add(s.substring(s.indexOf("=")+1));
             }
         }
@@ -98,17 +98,5 @@ public class DNUtils {
             list.add(sb.toString());
         }
         return list.toArray(new String[0]);
-    }
-    
-    private static String arrayToString(String [] s){
-        StringBuffer sb = new StringBuffer();
-        sb.append("[");
-        for(String a:s){
-            sb.append(">");
-            sb.append(a);
-            sb.append("<");
-        }
-        sb.append("]");
-        return sb.toString();
     }
 }
