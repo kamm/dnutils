@@ -32,7 +32,7 @@ public class DNUtilsTest
     
     @Test
     public void testNormalize() {
-        String dn="C=PL, O=First Test, OU=Many, many, many commas, cn=Something";
+        String dn="C=PL,     o=First Test,\tOu=Many, many, many commas, cn=Something";
 	    assertEquals("C=PL,O=First Test,OU=Many, many, many commas,CN=Something",DNUtils.normalizeDN(dn));
     }
     
