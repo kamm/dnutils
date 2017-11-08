@@ -6,10 +6,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DNUtils {
     private static final String REGEX = "(([a-zA-Z]+?)=((?:(?![a-zA-Z]+?=.*?).)*))(,|(?!(,)$)(?!(.)))";
     
