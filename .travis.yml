@@ -1,4 +1,8 @@
 language: java
+jdk:
+          - oraclejdk8
+
+script: mvn clean verify
 
 before_install:
   - sudo apt-get install jq
