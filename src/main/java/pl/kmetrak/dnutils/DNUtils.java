@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class DNUtils {
     private static final String REGEX = "(([a-zA-Z]+?)=((?:(?![a-zA-Z]+?=.*?).)*))(,|(?!(,)$)(?!(.)))";
-    
+
     public static String flatten(String dn){
         Pattern p = Pattern.compile(REGEX);
         List<String> list = new ArrayList<>();
