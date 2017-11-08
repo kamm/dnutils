@@ -16,6 +16,7 @@ public class DNUtilsTest
 	    assertEquals("Many, many, many commas", DNUtils.getField(dn,"OU"));
 	    assertEquals("Something", DNUtils.getField(dn,"cn"));
 	    assertEquals("Something", DNUtils.getField(dn,"CN"));
+	    assertNull(DNUtils.getField(dn, "null"));
     }
     
     @Test
@@ -40,5 +41,11 @@ public class DNUtilsTest
     public void testTree() {
         String dn="C=PL, O=First Test, OU=Many, many, many commas, cn=Something";
 	    assertArrayEquals(new String[]{"C=PL", "C=PL,O=First Test", "C=PL,O=First Test,OU=Many, many, many commas", "C=PL,O=First Test,OU=Many, many, many commas,cn=Something"},DNUtils.treeDN(dn));
+    }
+    
+    @Test
+    public void testFlatten() {
+        String dn="C=PL,     o=First Test,\tOu=Many, many, many commas, cn=Something";
+	    assertEquals("PL, First Test, Many, many, many commas, Something",DNUtils.flatten(dn));
     }
 }
