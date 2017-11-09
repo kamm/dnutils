@@ -10,6 +10,10 @@ import org.junit.Test;
 public class DNUtilsTest 
 {
     @Test
+    public void testFake() {
+        assertNotNull(new DNUtils());
+    } 
+    @Test
     public void testGetField() {
         String dn="C=PL, O=First Test, OU=Many, many, many commas, cn=Something";
 	    assertEquals("First Test", DNUtils.getField(dn,"O"));
